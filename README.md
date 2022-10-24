@@ -1,2 +1,6 @@
-# dev_env_manager
-dev_env_manager
+# Local Development Environment
+
+This is the project folder to create a local development environment. 
+
+- Linux and MacOS environments considerd.
+- 
