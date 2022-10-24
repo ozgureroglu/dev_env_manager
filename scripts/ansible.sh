@@ -1,17 +1,17 @@
 #!/bin/bash
 
-echo "\nInstalling ansible"
+echo -e "\nInstalling ansible"
 
 OS=""
        
 
 # Check the operating system and set the global var. 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        echo "linux"
+        echo -e "\tlinux"
         OS="linux"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
-        echo "macos"
+        echo -e "\tmacos"
         OS="mac"        
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows

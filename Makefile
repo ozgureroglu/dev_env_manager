@@ -30,13 +30,13 @@ project-init:							## Intialize a new cluster setup project
 	cp terraform.tfvars $${TF_VAR_cluster_tfvars}
 detect_os:							## Installs necessary tools to your machine
 	$(info DETECT OS)
-	sh ./scripts/detect_os.sh
+	./scripts/detect_os.sh
 brew:							## Installs necessary tools to your machine
 	$(info BREW INSTALLATION)
-	sh ./scripts/brew.sh
+	./scripts/brew.sh
 ansible:							## Installs necessary tools to your machine
 	$(info ANSIBLE INSTALLATION)
-	sh scripts/ansible.sh
+	./scripts/ansible.sh
 init:				verify-cloud-set		## Initialize remote S3 backend.
 	figlet ${CLUSTER_NAME} INIT
 	terraform init -backend-config="prefix=$$(basename $$(pwd))" -backend-config="bucket=$${TF_VAR_aws_bucket_tf_state}" -var-file="../../$${TF_VAR_cluster_tfvars}"

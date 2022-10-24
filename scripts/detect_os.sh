@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "---------------------"
-echo "\nDetecting your OS"
+echo -e "\nDetecting your OS"
 
 OS=""
      
