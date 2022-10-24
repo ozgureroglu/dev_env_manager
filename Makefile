@@ -13,7 +13,7 @@ endif
 .PHONY: all plan apply destroy
 
 all: help
-
+toolset: ansible
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 
@@ -28,9 +28,12 @@ help:								## Show makefile help
 project-init:							## Intialize a new cluster setup project
 	figlet ${CLUSTER_NAME} PROJECT INIT
 	cp terraform.tfvars $${TF_VAR_cluster_tfvars}
-toolset:							## Installs necessary tools to your machine
-	$(info TOOLSET INSTALLATION)
-	sh ./scripts/toolset.sh
+brew:							## Installs necessary tools to your machine
+	$(info BREW INSTALLATION)
+	sh ./scripts/brew.sh
+ansible:							## Installs necessary tools to your machine
+	$(info ANSIBLE INSTALLATION)
+	sh scripts/ansible.sh
 init:				verify-cloud-set		## Initialize remote S3 backend.
 	figlet ${CLUSTER_NAME} INIT
 	terraform init -backend-config="prefix=$$(basename $$(pwd))" -backend-config="bucket=$${TF_VAR_aws_bucket_tf_state}" -var-file="../../$${TF_VAR_cluster_tfvars}"

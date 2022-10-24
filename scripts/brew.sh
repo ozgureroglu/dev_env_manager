@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\nInstalling tools"
+echo "\nInstalling ansible"
 
 OS=""
        
@@ -12,8 +12,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
         echo "macos"
-        OS="mac"
-        
+        OS="mac"        
 elif [[ "$OSTYPE" == "cygwin" ]]; then
         # POSIX compatibility layer and Linux environment emulation for Windows
         echo "cygwin"
