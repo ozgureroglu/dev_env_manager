@@ -13,7 +13,7 @@ endif
 .PHONY: all plan apply destroy
 
 all: help
-toolset: ansible
+toolset: detect_os ansible
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
 
@@ -28,6 +28,9 @@ help:								## Show makefile help
 project-init:							## Intialize a new cluster setup project
 	figlet ${CLUSTER_NAME} PROJECT INIT
 	cp terraform.tfvars $${TF_VAR_cluster_tfvars}
+detect_os:							## Installs necessary tools to your machine
+	$(info DETECT OS)
+	sh ./scripts/detect_os.sh
 brew:							## Installs necessary tools to your machine
 	$(info BREW INSTALLATION)
 	sh ./scripts/brew.sh
